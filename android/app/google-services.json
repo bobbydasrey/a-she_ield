@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1020188536960",
+    "project_id": "sheield-a8d67",
+    "storage_bucket": "sheield-a8d67.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020188536960:android:cb7fb26b1e3081c29c7665",
+        "android_client_info": {
+          "package_name": "com.example.she_ield"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6PZyZ2qqQ6JacHDYEykT9ZrqksLSwLC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
