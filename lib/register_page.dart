@@ -166,6 +166,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     const SizedBox(height: 20),
 
                     // 🔁 OLD USER LOGIN
+                   // const SizedBox(height: 20),
                     Center(
                       child: GestureDetector(
                         onTap: () {
@@ -179,9 +180,10 @@ class _RegisterPageState extends State<RegisterPage> {
                         child: const Text(
                           "Already registered? Login",
                           style: TextStyle(
-                            fontSize: 18,
+                            fontSize: 16,
                             color: Colors.green,
                             fontWeight: FontWeight.w600,
+
                           ),
                         ),
                       ),

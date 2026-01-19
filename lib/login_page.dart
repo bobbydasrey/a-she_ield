@@ -210,7 +210,7 @@ class _LoginPageState extends State<LoginPage> {
                         "Your safety is our priority 💚",
                         style: TextStyle(
                           fontSize: 25,
-                          color: themeColor,
+                          color: Colors.green,
                         ),
                       ),
                     ),
