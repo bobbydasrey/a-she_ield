@@ -1,12 +1,13 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'animation_login_page.dart';
+import 'register_page.dart';
+import 'login_page.dart';
 
 
 Future<void> main() async {
-    WidgetsFlutterBinding.ensureInitialized();
-    await Firebase.initializeApp();
-    runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(const MyApp());
 
 }
 
@@ -57,50 +58,50 @@ class _SheShieldSplashState extends State<SheShieldSplash> {
             const Text("Welcome",
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.green),
             ),
-      //const SizedBox(height: 20),
-      GestureDetector(
-        onTap: () { setState(() => isOpened = true);
+            //const SizedBox(height: 20),
+            GestureDetector(
+              onTap: () { setState(() => isOpened = true);
 
-          // Sirf tab login page khulega jab shell open ho chuka hai
-            Future.delayed(const Duration(milliseconds: 800), (){
-        //WidgetsBinding.instance.addPostFrameCallback((_) {
-              if (!mounted) return;
-               Navigator.pushReplacement(
-                 context,
-                 MaterialPageRoute(
-                 builder: (context) =>
-                 const AnimatedLoginPage(isFirstTime: true),
+              // Sirf tab login page khulega jab shell open ho chuka hai
+              Future.delayed(const Duration(seconds: 3), (){
+                //WidgetsBinding.instance.addPostFrameCallback((_) {
+                if (!mounted) return;
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                    const RegisterPage(),
+                  ),
+                );
+              });
+              },
+
+
+              child: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 1000),
+                child: isOpened
+                    ? Image.asset('assets/open_shell_with_woman.jpeg', key: const ValueKey(1), height: 350)
+                    : Image.asset('assets/closed_shell.jpeg', key: const ValueKey(2), height: 350),
               ),
-            );
-          });
-      },
-
-
-        child: AnimatedSwitcher(
-          duration: const Duration(milliseconds: 1000),
-          child: isOpened
-              ? Image.asset('assets/open_shell_with_woman.jpeg', key: const ValueKey(1), height: 350)
-              : Image.asset('assets/closed_shell.jpeg', key: const ValueKey(2), height: 350),
-        ),
-      ),
-        if (isOpened) ...[
-         const SizedBox(height: 12),
-         const Text(
-          "She_ield",
-         style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.green),
-      ),
-          const Text(
-            "Your Safety, Our Priority",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.green,
             ),
-          ),
-    ]
-  ],
-    ),
+            if (isOpened) ...[
+              const SizedBox(height: 12),
+              const Text(
+                "She_ield",
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.green),
+              ),
+              const Text(
+                "Your Safety, Our Priority",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.green,
+                ),
+              ),
+            ]
+          ],
+        ),
       ),
     );
   }

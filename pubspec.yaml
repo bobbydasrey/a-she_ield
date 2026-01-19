@@ -34,6 +34,7 @@ flutter:
     assets: # 2 spaces
       - assets/closed_shell.jpeg   # 4 spaces
       - assets/open_shell_with_woman.jpeg  # 4 spaces
+      - assets/login_page_4friends.jpg
 
 
   # To add assets to your application, add an assets section, like this:
