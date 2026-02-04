@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'screens/dashboard_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -175,6 +176,16 @@ class _LoginPageState extends State<LoginPage> {
                               email: emailController.text.trim(),
                               password: passwordController.text.trim(),
                             );
+
+                            if (!mounted) return;
+
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const DashboardPage(),
+                              ),
+                            );
+
 
                             // TODO: HomePage navigation
                           } on FirebaseAuthException catch (e) {
